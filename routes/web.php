@@ -38,4 +38,8 @@ Route::get('/', function () {
 // View::share("share","Lap trinh laravel");
 Route::get('/blade',function(){
 	return view('2');
+
 });
+Route::get('/trangchu','PageController@menu');
+Route::get('/dangnhap','PageController@getdangnhap');
+Route::post('/dangnhap','PageController@postdangnhap');
