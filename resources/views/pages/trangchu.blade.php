@@ -10,7 +10,7 @@
         <div class="row main-left">
            @include('layout.menu')
 
-            <div class="col-md-9">
+            <div class="col-md-10">
 	            <div class="panel panel-default">            
 	            	<div class="panel-heading" style="background-color:#337AB7; color:white;" >
 	            		<h2 style="margin-top:0px; margin-bottom:0px;">Laravel Tin Tức</h2>
@@ -22,7 +22,7 @@
 	            			@if(count($tl->loaitin)>0)
 	            			<?php
 	            			$data=$tl->tintuc->where('NoiBat',1)->take(4);
-	            			//echo $data["0"];
+	            			//echo $data;
 	            			//$tin1=$data->shift();
 	            			//echo $tin1;
 	            			?>
@@ -36,7 +36,7 @@
 		                	<div class="col-md-8 border-right">
 		                		<div class="col-md-5">
 			                        <a href="detail.html">
-			                            <img class="img-responsive" src="image/320x150.png" alt="">
+			                            <img class="img-responsive" src="image/tintuc/{{$data["0"]->Hinh}}"+".jpg" alt="">
 			                        </a>
 			                    </div>
                               
@@ -52,33 +52,15 @@
 		                    
 
 							<div class="col-md-4">
+								@foreach($data as $data1)
 								<a href="detail.html">
 									<h4>
 										<span class="glyphicon glyphicon-list-alt"></span>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+										{{$data1->TieuDe}}
 									</h4>
 								</a>
-
-								<a href="detail.html">
-									<h4>
-										<span class="glyphicon glyphicon-list-alt"></span>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</h4>
-								</a>
-
-								<a href="detail.html">
-									<h4>
-										<span class="glyphicon glyphicon-list-alt"></span>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</h4>
-								</a>
-
-								<a href="detail.html">
-									<h4>
-										<span class="glyphicon glyphicon-list-alt"></span>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</h4>
-								</a>
+								@endforeach
+								
 							</div>
 							
 							<div class="break"></div>

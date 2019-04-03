@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Laravel Khoa Pham</title>
-
+    <base href="{{asset('public/')}}">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 

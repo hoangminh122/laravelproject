@@ -43,3 +43,4 @@ Route::get('/blade',function(){
 Route::get('/trangchu','PageController@menu');
 Route::get('/dangnhap','PageController@getdangnhap');
 Route::post('/dangnhap','PageController@postdangnhap');
+Route::get('/loaitin/{id}','PageController@getloaitin');

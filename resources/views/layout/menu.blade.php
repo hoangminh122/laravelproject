@@ -1,5 +1,5 @@
  
- <div class="col-md-3 ">
+ <div class="col-md-2 ">
                 <ul class="list-group" id="menu">
                     <li href="#" class="list-group-item menu1 active">
                     	Menu
@@ -11,7 +11,7 @@
                     <ul>
                         @foreach($loai->loaitin as $lt)
                 		<li class="list-group-item">
-                			<a href="#">{{$lt->Ten}}</a>
+                			<a href="loaitin/{{$lt->id}}">{{$lt->Ten}}</a>
                 		</li>
                 		@endforeach
                     </ul>

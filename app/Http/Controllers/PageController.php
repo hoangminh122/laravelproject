@@ -6,13 +6,22 @@ use Illuminate\Http\Request;
 use App\TheLoai;
 use App\slide;
 use App\LoaiTin;
+use App\TinTuc;
 class PageController extends Controller
 {
+	function __construct(){
+		$slide=slide::all();
+		$theloai=TheLoai::all();
+		// View::share('slide',$slide);
+		// View::share('theloai',$theloai);
+		view()->share('slide',$slide);
+		view()->share('theloai',$theloai);
+	}
     //
     public function menu(){
-    	$slide=slide::all();
-     	$theloai=TheLoai::all();
-     	return view('pages.trangchu',['theloai'=>$theloai,'slide'=>$slide]);
+    	
+     return view('pages.trangchu');
+     //	return view('pages.trangchu',['theloai'=>$theloai,'slide'=>$slide]);
      }
     public function getdangnhap(){
     	return view('pages.dangnhap');
@@ -20,5 +29,11 @@ class PageController extends Controller
     }
     public function postdangnhap(){
 
+    }
+    public function getloaitin($id1){
+    	$loaitin=LoaiTin::find($id1);
+    	$tintuc=TinTuc::where('idLoaiTin',$id1)->paginate(5);
+
+    	return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc]);
     }
 }
