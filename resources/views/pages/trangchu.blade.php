@@ -30,12 +30,12 @@
 		                	<h3>
 		                		<a href="category.html">{{$tl['Ten']}}</a> | 
 		                		@foreach($tl->loaitin as $lt)	
-		                		<small><a href="category.html"><i>{{$lt->Ten}}</i></a>/</small>
+		                		<small><a href="chitiet/{{$lt->id}}"><i>{{$lt->Ten}}</i></a>/</small>
 		                		@endforeach
 		                	</h3>
 		                	<div class="col-md-8 border-right">
 		                		<div class="col-md-5">
-			                        <a href="detail.html">
+			                        <a href="chitiet/{{$data["0"]->id}}">
 			                            <img class="img-responsive" src="image/tintuc/{{$data["0"]->Hinh}}"+".jpg" alt="">
 			                        </a>
 			                    </div>
@@ -44,7 +44,7 @@
 			                    <div class="col-md-7">
 			                        <h3>{{$data["0"]['TieuDe']}}</h3>
 			                        <p>{{$data["0"]['TomTat']}}</p>
-			                        <a class="btn btn-primary" href="detail.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+			                        <a class="btn btn-primary" href="chitiet/{{$data["0"]->id}}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
 								</div>
 								
 
@@ -53,7 +53,7 @@
 
 							<div class="col-md-4">
 								@foreach($data as $data1)
-								<a href="detail.html">
+								<a href="chitiet/{{$data1->id}}">
 									<h4>
 										<span class="glyphicon glyphicon-list-alt"></span>
 										{{$data1->TieuDe}}

@@ -36,4 +36,13 @@ class PageController extends Controller
 
     	return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc]);
     }
+    public function getchitiet($id){
+        $tintuc=TinTuc::find($id);
+        $temp=$tintuc->idLoaiTin;
+       // dd($temp);
+        $tinlienquan=TinTuc::where('idLoaiTin',$temp)->get()->take(4);
+         $tinnoibat=TinTuc::where('NoiBat',"1")->get()->take(4);
+     //  dd($tinlienquan);
+        return view('pages.chitiet',['tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan,'tinnoibat'=>$tinnoibat]);
+    }
 }

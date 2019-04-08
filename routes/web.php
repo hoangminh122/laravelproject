@@ -44,3 +44,4 @@ Route::get('/trangchu','PageController@menu');
 Route::get('/dangnhap','PageController@getdangnhap');
 Route::post('/dangnhap','PageController@postdangnhap');
 Route::get('/loaitin/{id}','PageController@getloaitin');
+Route::get('/chitiet/{id}','PageController@getchitiet');
