@@ -13,7 +13,7 @@
             <div class="col-md-10">
 	            <div class="panel panel-default">            
 	            	<div class="panel-heading" style="background-color:#337AB7; color:white;" >
-	            		<h2 style="margin-top:0px; margin-bottom:0px;">Laravel Tin Tức</h2>
+	            		<h2 style="margin-top:0px; margin-bottom:0px;">Tin Tức</h2>
 	            	</div>
 
 	            	<div class="panel-body">
@@ -42,21 +42,21 @@
                               
                               
 			                    <div class="col-md-7">
-			                        <h3>{{$data["0"]['TieuDe']}}</h3>
+			                        <h3><b>{{$data["0"]['TieuDe']}}</b></h3>
 			                        <p>{{$data["0"]['TomTat']}}</p>
-			                        <a class="btn btn-primary" href="chitiet/{{$data["0"]->id}}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+			                        <a class="btn btn-primary" href="chitiet/{{$data["0"]->id}}"><b>Xem thêm</b><span class="glyphicon glyphicon-chevron-right"></span></a>
 								</div>
 								
 
 		                	</div>
 		                    
 
-							<div class="col-md-4">
+							<div class="col-md-4 " >
 								@foreach($data as $data1)
 								<a href="chitiet/{{$data1->id}}">
 									<h4>
-										<span class="glyphicon glyphicon-list-alt"></span>
-										{{$data1->TieuDe}}
+										<span class="glyphicon glyphicon-list-alt text-success"></span>
+										<span class="text-info">{{$data1->TieuDe}}</span>
 									</h4>
 								</a>
 								@endforeach

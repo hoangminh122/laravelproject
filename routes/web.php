@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 // Route::get("/{minh}/{nam}",function($minh,$nam="nam"){
 // 	return "Hoàng Minh $minh và $nam";
 // });
@@ -40,8 +40,34 @@ Route::get('/blade',function(){
 	return view('2');
 
 });
-Route::get('/trangchu','PageController@menu');
+Route::get('/','PageController@menu');
 Route::get('/dangnhap','PageController@getdangnhap');
 Route::post('/dangnhap','PageController@postdangnhap');
 Route::get('/loaitin/{id}','PageController@getloaitin');
 Route::get('/chitiet/{id}','PageController@getchitiet');
+Route::get('/login','PageController@getdangnhap');
+Route::post('/dangnhap','PageController@postdangnhap');
+Route::get('/admin/theloai/them','PageController@getthemtheloai');
+
+Route::group(['prefix'=>'admin'],function(){
+	Route::group(['prefix'=>'pages'],function(){
+		Route::group(['prefix'=>'theloai'],function(){
+             Route::get('danhsach','TheloaiController@getDanhSach');
+             Route::get('getthem','TheloaiController@getThem');
+             Route::post('postthem','TheloaiController@postThem');
+             Route::get('sua','TheloaiController@getSua');
+		});
+		Route::group(['prefix'=>'tintuc'],function(){
+             Route::get('danhsach','TintucController@getDanhSach');
+             Route::get('them','TintucController@getThem');
+             Route::get('sua','TintucController@getSua');
+		});
+		Route::group(['prefix'=>'user'],function(){
+             Route::get('danhsach','UserController@getDanhSach');
+             Route::get('them','UserController@getThem');
+             Route::get('sua','UserController@getSua');
+		});
+	});
+
+});
+

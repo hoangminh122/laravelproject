@@ -36,7 +36,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected $table="users"
+    protected $table="users";
     public function comment(){
         return $this->hasMany('App\Comment','idUser','id');
     }
